@@ -2,7 +2,6 @@
 
 namespace App\Catalog\Category;
 
-use Moltin\SDK\Facade\Moltin as Moltin;
 use Moltin\SDK\Facade\Product as Product;
 
 class CategoryList
@@ -17,12 +16,7 @@ class CategoryList
         \Psr\Http\Message\ResponseInterface $response
     ) {
         $this->response = $response;
-
-        // Authenticate credentials
-        Moltin::Authenticate('ClientCredentials', [
-            'client_id'     => getenv('MOLTIN_CLIENT_ID'),
-            'client_secret' => getenv('MOLTIN_CLIENT_SECRET')
-        ]);
+        (new \App\Application\Authenticator())->authenticate();
 
         $products = Product::Listing();
 

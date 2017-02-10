@@ -1,0 +1,25 @@
+{
+    "name": "ecommerce/moltin-poc",
+    "description": "A small proof of concept for Moltin",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sander Mangel",
+            "email": "sander@sandermangel.nl"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "*",
+        "slim/slim": "^3.7",
+        "moltin/php-sdk": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    }
+}

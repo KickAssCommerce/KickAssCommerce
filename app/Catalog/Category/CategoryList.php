@@ -7,6 +7,9 @@ use Moltin\SDK\Facade\Product as Product;
 
 class CategoryList
 {
+    /**
+     * @var \Psr\Http\Message\ResponseInterface
+     */
     private $response;
 
     public function __invoke(
@@ -14,6 +17,7 @@ class CategoryList
         \Psr\Http\Message\ResponseInterface $response
     ) {
         $this->response = $response;
+
         // Authenticate credentials
         Moltin::Authenticate('ClientCredentials', [
             'client_id'     => getenv('MOLTIN_CLIENT_ID'),
@@ -39,8 +43,15 @@ class CategoryList
         return $this->response;
     }
 
-    private function displayProductDetails($product)
+    private function displayProductDetails($product, $key)
     {
-        $this->response->write($product['sku']);
+        $this->response->write('<br />');
+        $this->response->write('ProductNumber: ' . $key . '<br />');
+        $this->response->write(
+            sprintf(
+                'Sku: %s',
+                $product['sku']
+            )
+        );
     }
 }

@@ -7,4 +7,5 @@ A small proof of concept for using Moltin in PHPs
 
 ## Authors
 
-Sander Mangel <s.mangel@fitforme.nl>
+Sander Mangel <http://www.twitter.com/sandermangel>
+David Manners <http://www.twitter.com/mannersd>

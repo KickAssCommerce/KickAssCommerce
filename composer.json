@@ -3,12 +3,6 @@
     "description": "A small proof of concept for Moltin",
     "type": "project",
     "license": "MIT",
-    "authors": [
-        {
-            "name": "Sander Mangel",
-            "email": "sander@sandermangel.nl"
-        }
-    ],
     "require": {
         "vlucas/phpdotenv": "*",
         "slim/slim": "^3.7",

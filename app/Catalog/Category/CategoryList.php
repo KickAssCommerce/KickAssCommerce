@@ -1,6 +1,6 @@
 <?php
 
-namespace Catalog\Category;
+namespace App\Catalog\Category;
 
 class CategoryList
 {

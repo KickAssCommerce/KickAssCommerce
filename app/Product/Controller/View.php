@@ -50,15 +50,17 @@ class View
 
             array_walk(
                 $products['result'],
-                [$this, 'displayProductDetails']
+                [$this, 'displayProductDetails'],
+                $request->getAttributes()
             );
         }
 
         return $this->response;
     }
 
-    private function displayProductDetails($product, $key)
+    private function displayProductDetails($product, $key, $attributes)
     {
+        $this->response->write($attributes['identifier']);
         $this->response->write('<br />');
         $this->response->write('ProductNumber: ' . $key . '<br />');
         $this->response->write(

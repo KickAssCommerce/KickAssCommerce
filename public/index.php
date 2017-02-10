@@ -4,7 +4,10 @@ require '../bootstrap/env.php';
 
 use Slim\App;
 
-$app = new App();
+$container = new \Slim\Container;
+$container['authenticator'] = new \App\Application\Authenticator();
+
+$app = new App($container);
 
 $app->get('/shop/category/list', \App\Catalog\Category\CategoryList::class);
 

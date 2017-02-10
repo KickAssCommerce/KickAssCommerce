@@ -2,8 +2,6 @@
 
 namespace App\Catalog\Category;
 
-use Moltin\SDK\Facade\Product as Product;
-
 class CategoryList
 {
     /**
@@ -17,13 +15,20 @@ class CategoryList
     private $authenticator;
 
     /**
+     * @var \App\Application\ProductInterface
+     */
+    private $product;
+
+    /**
      * CategoryList constructor.
      * @param \App\Application\AuthenticatorInterface $authenticator
      */
     public function __construct(
-        \App\Application\AuthenticatorInterface $authenticator
+        \App\Application\AuthenticatorInterface $authenticator,
+        \App\Application\ProductInterface $product
     ) {
         $this->authenticator = $authenticator;
+        $this->product = $product;
     }
 
     public function __invoke(
@@ -33,7 +38,7 @@ class CategoryList
         $this->response = $response;
         $this->authenticator->authenticate();
 
-        $products = Product::Listing();
+        $products = $this->product->getProductList();
 
         if (!empty($products)) {
             $this->response->write(

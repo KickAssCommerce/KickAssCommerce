@@ -22,4 +22,13 @@ class Product implements ProductInterface
     {
         return MoltinProduct::Get($identifier);
     }
+
+    /**
+     * @param array $terms
+     * @return array
+     */
+    public function getSearchResults(array $terms = array())
+    {
+        return MoltinProduct::Search($terms);
+    }
 }

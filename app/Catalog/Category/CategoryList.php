@@ -12,18 +12,18 @@ class CategoryList
     private $response;
 
     /**
-     * @var \Interop\Container\ContainerInterface
+     * @var \App\Application\AuthenticatorInterface
      */
-    private $container;
+    private $authenticator;
 
     /**
      * CategoryList constructor.
-     * @param \Interop\Container\ContainerInterface $container
+     * @param \App\Application\AuthenticatorInterface $authenticator
      */
     public function __construct(
-        \Interop\Container\ContainerInterface $container
+        \App\Application\AuthenticatorInterface $authenticator
     ) {
-        $this->container = $container;
+        $this->authenticator = $authenticator;
     }
 
     public function __invoke(
@@ -31,8 +31,7 @@ class CategoryList
         \Psr\Http\Message\ResponseInterface $response
     ) {
         $this->response = $response;
-        $authenticator = $this->container->get('authenticator');
-        $authenticator->authenticate();
+        $this->authenticator->authenticate();
 
         $products = Product::Listing();
 

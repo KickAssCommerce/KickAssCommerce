@@ -4,11 +4,24 @@ require '../bootstrap/env.php';
 
 use Slim\App;
 
-$container = new \Slim\Container;
-$container['authenticator'] = new \App\Application\Authenticator();
+$app = new App();
 
-$app = new App($container);
+//$container = new \Slim\Container;
+/*$container['CategoryList'] = new \App\Catalog\Category\CategoryList(
+    new \App\Application\Authenticator()
+);*/
 
-$app->get('/shop/category/list', \App\Catalog\Category\CategoryList::class);
+$container = $app->getContainer();
+
+$container['CategoryList'] = function ($container) {
+    $controller = new \App\Catalog\Category\CategoryList(
+        new \App\Application\Authenticator()
+    );
+    //$controller->setContainer($container);
+
+    return $controller;
+};
+
+$app->get('/shop/category/list', $container['CategoryList']);
 
 $app->run();

@@ -12,7 +12,7 @@ class Product implements ProductInterface
      */
     public function getProductList(array $filter = array())
     {
-        return MoltinProduct::Listing($filter);
+        return MoltinProduct::Search($filter);
     }
     /**
      * @param int $identifier
@@ -21,14 +21,5 @@ class Product implements ProductInterface
     public function getProductItem(int $identifier)
     {
         return MoltinProduct::Get($identifier);
-    }
-
-    /**
-     * @param array $terms
-     * @return array
-     */
-    public function getSearchResults(array $terms = array())
-    {
-        return MoltinProduct::Search($terms);
     }
 }

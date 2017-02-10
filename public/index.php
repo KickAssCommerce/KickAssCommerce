@@ -6,17 +6,8 @@ use Slim\App;
 
 $app = new App();
 
-$container = $app->getContainer();
-
-$container['CategoryList'] = function ($container) {
-    $controller = new \App\Catalog\Category\CategoryList(
-        new \App\Application\Authenticator(),
-        new \App\Application\Product()
-    );
-
-    return $controller;
-};
-
-$app->get('/shop/category/list', $container['CategoryList']);
+foreach ($routes as $uri => $containerPath) {
+    $app->get($uri, $containerPath);
+}
 
 $app->run();

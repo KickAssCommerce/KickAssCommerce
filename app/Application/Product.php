@@ -14,4 +14,12 @@ class Product implements ProductInterface
     {
         return MoltinProduct::Listing($filter);
     }
+    /**
+     * @param int $identifier
+     * @return array
+     */
+    public function getProductItem(int $identifier)
+    {
+        return MoltinProduct::Get($identifier);
+    }
 }

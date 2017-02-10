@@ -38,22 +38,9 @@ class View
         $this->response = $response;
         $this->authenticator->authenticate();
 
-        $products = $this->product->getProductList();
+        $product = $this->product->getProductItem($request->getAttribute('identifier'));
 
-        if (!empty($products)) {
-            $this->response->write(
-                sprintf(
-                    'We have %d product(s)!',
-                    count($products['result'])
-                )
-            );
-
-            array_walk(
-                $products['result'],
-                [$this, 'displayProductDetails'],
-                $request->getAttributes()
-            );
-        }
+        var_dump($product);
 
         return $this->response;
     }

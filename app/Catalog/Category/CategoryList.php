@@ -7,18 +7,40 @@ use Moltin\SDK\Facade\Product as Product;
 
 class CategoryList
 {
-    public function run($request, $response, $args)
-    {
+    private $response;
+
+    public function __invoke(
+        \Psr\Http\Message\ServerRequestInterface $request,
+        \Psr\Http\Message\ResponseInterface $response
+    ) {
+        $this->response = $response;
         // Authenticate credentials
         Moltin::Authenticate('ClientCredentials', [
             'client_id'     => getenv('MOLTIN_CLIENT_ID'),
             'client_secret' => getenv('MOLTIN_CLIENT_SECRET')
         ]);
 
-        $product = Product::Get(1447270639613248266);
+        $products = Product::Listing();
 
-        $response->write($product['result']['sku']);
+        if (!empty($products)) {
+            $this->response->write(
+                sprintf(
+                    'We have %d product(s)!',
+                    count($products['result'])
+                )
+            );
 
-        return $response;
+            array_walk(
+                $products['result'],
+                [$this, 'displayProductDetails']
+            );
+        }
+
+        return $this->response;
+    }
+
+    private function displayProductDetails($product)
+    {
+        $this->response->write($product['sku']);
     }
 }

@@ -2,6 +2,8 @@
 
 require '../vendor/autoload.php';
 
+ini_set('display_errors', 1);
+
 // load configuration
 $dotenv = new Dotenv\Dotenv(__DIR__ . '/../');
 $dotenv->load();

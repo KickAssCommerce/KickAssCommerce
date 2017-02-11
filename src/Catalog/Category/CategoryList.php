@@ -22,6 +22,7 @@ class CategoryList
     /**
      * CategoryList constructor.
      * @param \KickAss\Commerce\Application\AuthenticatorInterface $authenticator
+     * @param \KickAss\Commerce\Application\ProductInterface $product
      */
     public function __construct(
         \KickAss\Commerce\Application\AuthenticatorInterface $authenticator,

@@ -1,10 +1,10 @@
 <?php
 
-namespace KickAss\Commerce\Application;
+namespace KickAss\Commerce\Bridge\Moltin;
 
 use Moltin\SDK\Facade\Moltin as Moltin;
 
-class Authenticator implements AuthenticatorInterface
+class Authenticator implements \KickAss\Commerce\Application\AuthenticatorInterface
 {
     /**
      * @return bool

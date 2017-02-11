@@ -3,7 +3,7 @@
 namespace KickAss\Commerce\Bridge\Moltin;
 
 use Moltin\SDK\Facade\Product as MoltinProduct;
-use App\Exception\ProductNowFoundException as ProductException;
+use KickAss\Commerce\Product\Exception\ProductNowFoundException as ProductException;
 
 class Product implements \KickAss\Commerce\Application\ProductInterface
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace KickAss\Commerce\Repository;
+namespace KickAss\Commerce\Product\Repository;
 
 interface ProductInterface
 {

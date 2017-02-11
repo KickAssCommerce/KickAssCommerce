@@ -15,18 +15,18 @@ class Listing
     private $authenticator;
 
     /**
-     * @var \KickAss\Commerce\Repository\ProductInterface
+     * @var \KickAss\Commerce\Product\Repository\ProductInterface
      */
     private $product;
 
     /**
      * Listing constructor.
      * @param \KickAss\Commerce\Application\AuthenticatorInterface $authenticator
-     * @param \KickAss\Commerce\Repository\ProductInterface $product
+     * @param \KickAss\Commerce\Product\Repository\ProductInterface $product
      */
     public function __construct(
         \KickAss\Commerce\Application\AuthenticatorInterface $authenticator,
-        \KickAss\Commerce\Repository\ProductInterface $product
+        \KickAss\Commerce\Product\Repository\ProductInterface $product
     ) {
         $this->authenticator = $authenticator;
         $this->product = $product;

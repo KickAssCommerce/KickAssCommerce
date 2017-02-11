@@ -8,7 +8,7 @@ class RouterContainer
     {
         return new \KickAss\Commerce\Product\Controller\View(
             new \KickAss\Commerce\Bridge\Moltin\Authenticator(),
-            new \KickAss\Commerce\Repository\Product(
+            new \KickAss\Commerce\Product\Repository\Product(
                 new \KickAss\Commerce\Bridge\Moltin\Product(),
                 new \Symfony\Component\Serializer\Normalizer\ObjectNormalizer()
             )
@@ -19,7 +19,7 @@ class RouterContainer
     {
         return new \KickAss\Commerce\Product\Controller\Listing(
             new \KickAss\Commerce\Bridge\Moltin\Authenticator(),
-            new \KickAss\Commerce\Repository\Product(
+            new \KickAss\Commerce\Product\Repository\Product(
                 new \KickAss\Commerce\Bridge\Moltin\Product(),
                 new \Symfony\Component\Serializer\Normalizer\ObjectNormalizer()
             )

@@ -1,6 +1,6 @@
 <?php
 
-namespace KickAss\Commerce\Map;
+namespace KickAss\Commerce\Product\Map;
 
 class Product
 {

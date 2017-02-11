@@ -3,6 +3,7 @@
 namespace App\Application;
 
 use Moltin\SDK\Facade\Product as MoltinProduct;
+use App\Exception\ProductNowFoundException as ProductException;
 
 class Product implements ProductInterface
 {
@@ -14,6 +15,7 @@ class Product implements ProductInterface
     {
         return MoltinProduct::Listing($filter);
     }
+
     /**
      * @param int $identifier
      * @return array
@@ -21,6 +23,22 @@ class Product implements ProductInterface
     public function getProductItem(int $identifier)
     {
         return MoltinProduct::Get($identifier);
+    }
+
+    /**
+     * @param int string $slug
+     * @return array
+     */
+    public function getProductItemBySlug(string $slug)
+    {
+        $results = MoltinProduct::Search(['slug' => $slug]);
+        foreach ($results['result'] as $result) {
+            if ($result['slug'] == $slug) {
+                return $result;
+            }
+        }
+
+        throw new ProductException("Product {$slug} not found");
     }
 
     /**

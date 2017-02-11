@@ -38,7 +38,7 @@ class View
         $this->response = $response;
         $this->authenticator->authenticate();
 
-        $product = $this->product->getProductItem($request->getAttribute('identifier'));
+        $product = $this->product->getProductItemBySlug($request->getAttribute('slug'));
 
         var_dump($product);
 

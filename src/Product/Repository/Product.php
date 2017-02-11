@@ -24,25 +24,35 @@ class Product implements ProductInterface
 
     /**
      * @param int $id
-     * @return \KickAss\Commerce\Map\Product
-     * @throws \Symfony\Component\Serializer\Exception\UnexpectedValueException
+     * @return \KickAss\Commerce\Product\Map\Product
      */
     public function load($id)
     {
         $productInfo = $this->product->getProductItem($id);
-        return $this->normalizer->denormalize($productInfo['result'], \KickAss\Commerce\Product\Map\Product::class);
+
+        return $this->populateProductReporitory($productInfo['result']);
     }
 
     /**
      * @param string $attribute
      * @param string $value
-     * @return \KickAss\Commerce\Map\Product
-     * @throws \Symfony\Component\Serializer\Exception\UnexpectedValueException
+     * @return \KickAss\Commerce\Product\Map\Product
      */
     public function loadByAttribute(string $attribute, string $value)
     {
         $productInfo = $this->product->getProductItemByAttribute($attribute, $value);
-        return $this->normalizer->denormalize($productInfo, \KickAss\Commerce\Product\Map\Product::class);
+
+        return $this->populateProductReporitory($productInfo);
+    }
+
+    /**
+     * @param array $productData
+     * @return \KickAss\Commerce\Product\Map\Product
+     * @throws \Symfony\Component\Serializer\Exception\UnexpectedValueException
+     */
+    public function populateProductReporitory($productData)
+    {
+        return $this->normalizer->denormalize($productData, \KickAss\Commerce\Product\Map\Product::class);
     }
 
     /**

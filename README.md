@@ -9,5 +9,5 @@ Currently built on Moltin but PRs for other systems are welcome
 
 ## Authors
 
-Sander Mangel <http://www.twitter.com/sandermangel>
-David Manners <http://www.twitter.com/mannersd>
+- Sander Mangel <http://www.twitter.com/sandermangel>
+- David Manners <http://www.twitter.com/mannersd>

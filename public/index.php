@@ -2,9 +2,7 @@
 
 require '../bootstrap/env.php';
 
-use Slim\App;
-
-$app = new App();
+$app = new Slim\App(['settings' => ['displayErrorDetails' => (getenv('ENV_DEBUG') ? true : false)]]);
 
 foreach ($routes as $uri => $containerPath) {
     $app->get($uri, $containerPath());

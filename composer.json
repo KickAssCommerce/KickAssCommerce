@@ -5,7 +5,7 @@
     "license": "MIT",
     "require": {
         "vlucas/phpdotenv": "*",
-        "slim/slim": "^3.7",
+        "slim/slim": "*",
         "moltin/php-sdk": "*",
         "symfony/serializer": "^3.2",
         "symfony/property-access": "^3.2"

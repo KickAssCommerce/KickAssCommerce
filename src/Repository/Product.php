@@ -35,10 +35,20 @@ class Product implements ProductInterface
 
     /**
      * @param array $filters
-     * @return array
+     * @return \KickAss\Commerce\Map\Product[]
+     */
+    /**
+     * @param array $filters
+     * @return \KickAss\Commerce\Map\Product[]
+     * @throws \Symfony\Component\Serializer\Exception\UnexpectedValueException
      */
     public function search(array $filters = array())
     {
-        return $this->product->getProductList($filters);
+        $productInfo = $this->product->getProductList($filters);
+        $products = [];
+        foreach ($productInfo['result'] as $product) {
+            $products[] = $this->normalizer->denormalize($product, \KickAss\Commerce\Map\Product::class);
+        }
+        return $products;
     }
 }

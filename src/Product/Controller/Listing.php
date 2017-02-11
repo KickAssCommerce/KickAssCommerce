@@ -45,12 +45,12 @@ class Listing
             $this->response->write(
                 sprintf(
                     'We have %d product(s)!',
-                    count($products['result'])
+                    count($products)
                 )
             );
 
             array_walk(
-                $products['result'],
+                $products,
                 [$this, 'displayProductDetails']
             );
         }
@@ -58,14 +58,18 @@ class Listing
         return $this->response;
     }
 
-    private function displayProductDetails($product, $key)
+    /**
+     * @param \KickAss\Commerce\Map\Product $product
+     * @param $key
+     */
+    private function displayProductDetails(\KickAss\Commerce\Map\Product $product, $key)
     {
         $this->response->write('<br />');
         $this->response->write('ProductNumber: ' . $key . '<br />');
         $this->response->write(
             sprintf(
                 'Sku: %s',
-                $product['sku']
+                $product->getSku()
             )
         );
     }

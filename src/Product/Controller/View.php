@@ -41,7 +41,7 @@ class View
 
         $product = $this->product->load($request->getAttribute('identifier'));
 
-        var_dump($product);
+        $this->response->write('SKU: ' . $product->getSku());
 
         return $this->response;
     }

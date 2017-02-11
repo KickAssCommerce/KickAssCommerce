@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Product\Controller;
+namespace KickAss\Commerce\Product\Controller;
 
 class View
 {
@@ -10,22 +10,23 @@ class View
     private $response;
 
     /**
-     * @var \App\Application\AuthenticatorInterface
+     * @var \KickAss\Commerce\Application\AuthenticatorInterface
      */
     private $authenticator;
 
     /**
-     * @var \App\Application\ProductInterface
+     * @var \KickAss\Commerce\Repository\ProductInterface
      */
     private $product;
 
     /**
-     * CategoryList constructor.
-     * @param \App\Application\AuthenticatorInterface $authenticator
+     * View constructor.
+     * @param \KickAss\Commerce\Application\AuthenticatorInterface $authenticator
+     * @param \KickAss\Commerce\Repository\ProductInterface $product
      */
     public function __construct(
-        \App\Application\AuthenticatorInterface $authenticator,
-        \App\Application\ProductInterface $product
+        \KickAss\Commerce\Application\AuthenticatorInterface $authenticator,
+        \KickAss\Commerce\Repository\ProductInterface $product
     ) {
         $this->authenticator = $authenticator;
         $this->product = $product;
@@ -38,9 +39,9 @@ class View
         $this->response = $response;
         $this->authenticator->authenticate();
 
-        $product = $this->product->getProductItem($request->getAttribute('identifier'));
+        $product = $this->product->load($request->getAttribute('identifier'));
 
-        var_dump($product);
+        $this->response->write('SKU: ' . $product->getSku());
 
         return $this->response;
     }

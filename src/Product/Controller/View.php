@@ -39,7 +39,7 @@ class View
         $this->response = $response;
         $this->authenticator->authenticate();
 
-        $product = $this->product->getProductItemBySlug($request->getAttribute('slug'));
+        $product = $this->product->loadByAttribute('slug', $request->getAttribute('slug'));
 
         $this->response->write('SKU: ' . $product->getSku());
 

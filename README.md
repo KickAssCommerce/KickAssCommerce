@@ -4,6 +4,10 @@ A small proof of concept for building and eCommerce system based on an underlyin
 
 Currently built on Moltin but PRs for other systems are welcome
 
+"So is this a new eCommerce system?"
+> NO! we want to give you a way to work with your favourite (API enabled) eCommerce system without 
+> the constraints it might impose on the technologies you can use or the way you implement the frontend
+
 ## Requirements
 - PHP ^7.0
 

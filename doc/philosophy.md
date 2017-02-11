@@ -7,6 +7,9 @@ APIs are cool. And building an eCommerce framework based on APIs sounded really 
 This started as an experiment trying out the [Moltin](https://www.moltin.com/) service and turned into a project
 to try out shiny and new PHP stuff. A proof of concept to show the world eCommerce doesn't have to be monolithic. 
 
+We're not trying to replace existing eCommerce systems but augment them in a way that offers you, the developer, 
+the ability to use the libraries you want, the Javascript framework you want and anything else you want to try out.
+
 ## Architecture
 
 #### Domain oriented paths

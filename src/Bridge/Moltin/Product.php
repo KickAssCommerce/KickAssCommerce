@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Application;
+namespace KickAss\Commerce\Bridge\Moltin;
 
 use Moltin\SDK\Facade\Product as MoltinProduct;
 use App\Exception\ProductNowFoundException as ProductException;
 
-class Product implements ProductInterface
+class Product implements \KickAss\Commerce\Application\ProductInterface
 {
     /**
      * @param array $filter
@@ -13,7 +13,7 @@ class Product implements ProductInterface
      */
     public function getProductList(array $filter = array())
     {
-        return MoltinProduct::Listing($filter);
+        return MoltinProduct::Search($filter);
     }
 
     /**

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Catalog\Category;
+namespace KickAss\Commerce\Product\Controller;
 
-class CategoryList
+class Listing
 {
     /**
      * @var \Psr\Http\Message\ResponseInterface
@@ -10,22 +10,23 @@ class CategoryList
     private $response;
 
     /**
-     * @var \App\Application\AuthenticatorInterface
+     * @var \KickAss\Commerce\Application\AuthenticatorInterface
      */
     private $authenticator;
 
     /**
-     * @var \App\Application\ProductInterface
+     * @var \KickAss\Commerce\Repository\ProductInterface
      */
     private $product;
 
     /**
-     * CategoryList constructor.
-     * @param \App\Application\AuthenticatorInterface $authenticator
+     * Listing constructor.
+     * @param \KickAss\Commerce\Application\AuthenticatorInterface $authenticator
+     * @param \KickAss\Commerce\Repository\ProductInterface $product
      */
     public function __construct(
-        \App\Application\AuthenticatorInterface $authenticator,
-        \App\Application\ProductInterface $product
+        \KickAss\Commerce\Application\AuthenticatorInterface $authenticator,
+        \KickAss\Commerce\Repository\ProductInterface $product
     ) {
         $this->authenticator = $authenticator;
         $this->product = $product;
@@ -38,18 +39,18 @@ class CategoryList
         $this->response = $response;
         $this->authenticator->authenticate();
 
-        $products = $this->product->getProductList();
+        $products = $this->product->search();
 
         if (!empty($products)) {
             $this->response->write(
                 sprintf(
                     'We have %d product(s)!',
-                    count($products['result'])
+                    count($products)
                 )
             );
 
             array_walk(
-                $products['result'],
+                $products,
                 [$this, 'displayProductDetails']
             );
         }
@@ -57,14 +58,18 @@ class CategoryList
         return $this->response;
     }
 
-    private function displayProductDetails($product, $key)
+    /**
+     * @param \KickAss\Commerce\Map\Product $product
+     * @param $key
+     */
+    private function displayProductDetails(\KickAss\Commerce\Map\Product $product, $key)
     {
         $this->response->write('<br />');
         $this->response->write('ProductNumber: ' . $key . '<br />');
         $this->response->write(
             sprintf(
                 'Sku: %s',
-                $product['sku']
+                $product->getSku()
             )
         );
     }

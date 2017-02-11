@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Application;
+namespace KickAss\Commerce\Bridge\Moltin;
 
 use Moltin\SDK\Facade\Moltin as Moltin;
 
-class Authenticator implements AuthenticatorInterface
+class Authenticator implements \KickAss\Commerce\Application\AuthenticatorInterface
 {
     /**
      * @return bool
-     * @throws \App\Exception\FailedToAuthenticateException
+     * @throws \KickAss\Commerce\Exception\FailedToAuthenticateException
      */
     public function authenticate()
     {
@@ -22,7 +22,7 @@ class Authenticator implements AuthenticatorInterface
         );
 
         if ($result === false) {
-            throw new \App\Exception\FailedToAuthenticateException();
+            throw new \KickAss\Commerce\Exception\FailedToAuthenticateException();
         }
         return $result;
     }

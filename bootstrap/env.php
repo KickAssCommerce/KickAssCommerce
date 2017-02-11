@@ -7,6 +7,6 @@ $dotenv = new Dotenv\Dotenv(__DIR__ . '/../');
 $dotenv->load();
 
 $routes = [
-    '/shop/product/{slug}' => '\App\Product\RouterContainer::view',
-    '/shop/category/list' => '\App\Product\RouterContainer::listing'
+    '/shop/product/{slug}' => '\KickAss\Commerce\Product\RouterContainer::view',
+    '/shop/category/list' => '\KickAss\Commerce\Product\RouterContainer::listing'
 ];

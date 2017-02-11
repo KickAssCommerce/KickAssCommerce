@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Application;
+namespace KickAss\Commerce\Application;
 
 interface AuthenticatorInterface
 {

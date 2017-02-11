@@ -8,7 +8,9 @@ class RouterContainer
     {
         return new \KickAss\Commerce\Product\Controller\View(
             new \KickAss\Commerce\Application\Authenticator(),
-            new \KickAss\Commerce\Application\Product()
+            new \KickAss\Commerce\Repository\Product(
+                new \KickAss\Commerce\Application\Product()
+            )
         );
     }
 
@@ -16,7 +18,9 @@ class RouterContainer
     {
         return new \KickAss\Commerce\Product\Controller\Listing(
             new \KickAss\Commerce\Application\Authenticator(),
-            new \KickAss\Commerce\Application\Product()
+            new \KickAss\Commerce\Repository\Product(
+                new \KickAss\Commerce\Application\Product()
+            )
         );
     }
 }

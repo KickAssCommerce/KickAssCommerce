@@ -8,7 +8,7 @@ class Authenticator implements AuthenticatorInterface
 {
     /**
      * @return bool
-     * @throws \App\Exception\FailedToAuthenticateException
+     * @throws \KickAss\Commerce\Exception\FailedToAuthenticateException
      */
     public function authenticate()
     {
@@ -22,7 +22,7 @@ class Authenticator implements AuthenticatorInterface
         );
 
         if ($result === false) {
-            throw new \App\Exception\FailedToAuthenticateException();
+            throw new \KickAss\Commerce\Exception\FailedToAuthenticateException();
         }
         return $result;
     }

@@ -15,18 +15,18 @@ class View
     private $authenticator;
 
     /**
-     * @var \KickAss\Commerce\Application\ProductInterface
+     * @var \KickAss\Commerce\Repository\ProductInterface
      */
     private $product;
 
     /**
      * View constructor.
      * @param \KickAss\Commerce\Application\AuthenticatorInterface $authenticator
-     * @param \KickAss\Commerce\Application\ProductInterface $product
+     * @param \KickAss\Commerce\Repository\ProductInterface $product
      */
     public function __construct(
         \KickAss\Commerce\Application\AuthenticatorInterface $authenticator,
-        \KickAss\Commerce\Application\ProductInterface $product
+        \KickAss\Commerce\Repository\ProductInterface $product
     ) {
         $this->authenticator = $authenticator;
         $this->product = $product;
@@ -39,7 +39,7 @@ class View
         $this->response = $response;
         $this->authenticator->authenticate();
 
-        $product = $this->product->getProductItem($request->getAttribute('identifier'));
+        $product = $this->product->load($request->getAttribute('identifier'));
 
         var_dump($product);
 

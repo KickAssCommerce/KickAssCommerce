@@ -1,6 +1,6 @@
 <?php
 
-namespace KickAss\Commerce\Repository;
+namespace KickAss\Commerce\Product\Repository;
 
 class Product implements ProductInterface
 {
@@ -30,7 +30,7 @@ class Product implements ProductInterface
     public function load($id)
     {
         $productInfo = $this->product->getProductItem($id);
-        return $this->normalizer->denormalize($productInfo['result'], \KickAss\Commerce\Map\Product::class);
+        return $this->normalizer->denormalize($productInfo['result'], \KickAss\Commerce\Product\Map\Product::class);
     }
 
     /**
@@ -42,7 +42,7 @@ class Product implements ProductInterface
     public function loadByAttribute(string $attribute, string $value)
     {
         $productInfo = $this->product->getProductItemByAttribute($attribute, $value);
-        return $this->normalizer->denormalize($productInfo, \KickAss\Commerce\Map\Product::class);
+        return $this->normalizer->denormalize($productInfo, \KickAss\Commerce\Product\Map\Product::class);
     }
 
     /**
@@ -59,7 +59,7 @@ class Product implements ProductInterface
         $productInfo = $this->product->getProductList($filters);
         $products = [];
         foreach ($productInfo['result'] as $product) {
-            $products[] = $this->normalizer->denormalize($product, \KickAss\Commerce\Map\Product::class);
+            $products[] = $this->normalizer->denormalize($product, \KickAss\Commerce\Product\Map\Product::class);
         }
         return $products;
     }

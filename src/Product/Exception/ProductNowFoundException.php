@@ -1,6 +1,6 @@
 <?php
 
-namespace KickAss\Commerce\Exception;
+namespace KickAss\Commerce\Product\Exception;
 
 class ProductNowFoundException extends \RuntimeException
 {}

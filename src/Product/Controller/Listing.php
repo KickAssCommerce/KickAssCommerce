@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Product\Controller;
+namespace KickAss\Commerce\Product\Controller;
 
 class Listing
 {
@@ -10,22 +10,23 @@ class Listing
     private $response;
 
     /**
-     * @var \App\Application\AuthenticatorInterface
+     * @var \KickAss\Commerce\Application\AuthenticatorInterface
      */
     private $authenticator;
 
     /**
-     * @var \App\Application\ProductInterface
+     * @var \KickAss\Commerce\Application\ProductInterface
      */
     private $product;
 
     /**
-     * CategoryList constructor.
-     * @param \App\Application\AuthenticatorInterface $authenticator
+     * Listing constructor.
+     * @param \KickAss\Commerce\Application\AuthenticatorInterface $authenticator
+     * @param \KickAss\Commerce\Application\ProductInterface $product
      */
     public function __construct(
-        \App\Application\AuthenticatorInterface $authenticator,
-        \App\Application\ProductInterface $product
+        \KickAss\Commerce\Application\AuthenticatorInterface $authenticator,
+        \KickAss\Commerce\Application\ProductInterface $product
     ) {
         $this->authenticator = $authenticator;
         $this->product = $product;

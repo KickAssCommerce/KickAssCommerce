@@ -9,19 +9,28 @@ class Product implements ProductInterface
      */
     private $product;
 
+    /**
+     * @var \Symfony\Component\Serializer\Normalizer\ObjectNormalizer
+     */
+    private $normalizer;
+
     public function __construct(
-        \KickAss\Commerce\Application\ProductInterface $product
+        \KickAss\Commerce\Application\ProductInterface $product,
+        \Symfony\Component\Serializer\Normalizer\ObjectNormalizer $normalizer
     ) {
         $this->product = $product;
+        $this->normalizer = $normalizer;
     }
 
     /**
      * @param int $id
-     * @return array
+     * @return \KickAss\Commerce\Map\Product
+     * @throws \Symfony\Component\Serializer\Exception\UnexpectedValueException
      */
     public function load($id)
     {
-        return $this->product->getProductItem($id);
+        $productInfo = $this->product->getProductItem($id);
+        return $this->normalizer->denormalize($productInfo['result'], \KickAss\Commerce\Map\Product::class);
     }
 
     /**

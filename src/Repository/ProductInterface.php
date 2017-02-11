@@ -6,7 +6,7 @@ interface ProductInterface
 {
     /**
      * @param int $id
-     * @return array
+     * @return \KickAss\Commerce\Map\Product
      */
     public function load($id);
 

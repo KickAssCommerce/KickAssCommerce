@@ -6,7 +6,9 @@
     "require": {
         "vlucas/phpdotenv": "*",
         "slim/slim": "^3.7",
-        "moltin/php-sdk": "*"
+        "moltin/php-sdk": "*",
+        "symfony/serializer": "^3.2",
+        "symfony/property-access": "^3.2"
     },
     "require-dev": {
         "phpunit/phpunit": "*"

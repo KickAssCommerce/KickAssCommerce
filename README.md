@@ -1,6 +1,8 @@
-# Moltin proof of Concept
+# KickAss Commerce
 
-A small proof of concept for using Moltin in PHPs
+A small proof of concept for building and eCommerce system based on an underlying API system.
+
+Currently built on Moltin but PRs for other systems are welcome
 
 ## Requirements
 - PHP ^7.0

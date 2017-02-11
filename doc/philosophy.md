@@ -1,5 +1,12 @@
 # KickAss Commerce philosophy
 
+## But... why?
+Because developers always think they can do it better themselves.
+
+APIs are cool. And building an eCommerce framework based on APIs sounded really cool.
+This started as an experiment trying out the [Moltin](https://www.moltin.com/) service and turned into a project
+to try out shiny and new PHP stuff. A proof of concept to show the world eCommerce doesn't have to be monolithic. 
+
 ## Architecture
 
 #### Domain oriented paths

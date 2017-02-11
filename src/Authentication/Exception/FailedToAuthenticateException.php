@@ -1,6 +1,6 @@
 <?php
 
-namespace KickAss\Commerce\Exception;
+namespace KickAss\Commerce\Authentication\Exception;
 
 class FailedToAuthenticateException extends \RuntimeException
 {}

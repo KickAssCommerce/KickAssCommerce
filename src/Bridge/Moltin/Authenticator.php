@@ -22,7 +22,7 @@ class Authenticator implements \KickAss\Commerce\Application\AuthenticatorInterf
         );
 
         if ($result === false) {
-            throw new \KickAss\Commerce\Exception\FailedToAuthenticateException();
+            throw new \KickAss\Commerce\Authentication\Exception\FailedToAuthenticateException();
         }
         return $result;
     }

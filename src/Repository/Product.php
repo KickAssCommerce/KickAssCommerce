@@ -34,6 +34,18 @@ class Product implements ProductInterface
     }
 
     /**
+     * @param string $attribute
+     * @param string $value
+     * @return \KickAss\Commerce\Map\Product
+     * @throws \Symfony\Component\Serializer\Exception\UnexpectedValueException
+     */
+    public function loadByAttribute(string $attribute, string $value)
+    {
+        $productInfo = $this->product->getProductItemByAttribute($attribute, $value);
+        return $this->normalizer->denormalize($productInfo, \KickAss\Commerce\Map\Product::class);
+    }
+
+    /**
      * @param array $filters
      * @return \KickAss\Commerce\Map\Product[]
      */

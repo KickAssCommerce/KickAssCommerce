@@ -29,11 +29,11 @@ class Product implements \KickAss\Commerce\Application\ProductInterface
      * @param int string $slug
      * @return array
      */
-    public function getProductItemBySlug(string $slug)
+    public function getProductItemByAttribute(string $attribute, string $value)
     {
-        $results = MoltinProduct::Search(['slug' => $slug]);
+        $results = MoltinProduct::Search([$attribute => $value]);
         foreach ($results['result'] as $result) {
-            if ($result['slug'] == $slug) {
+            if ($result[$attribute] == $value) {
                 return $result;
             }
         }

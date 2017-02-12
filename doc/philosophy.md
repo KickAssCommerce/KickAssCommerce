@@ -34,3 +34,8 @@ Because we love to convert anything to everything and nothing beats Symfony seri
 #### Go! AOP
 You want to add business logic? Of course you do! Just DONT EDIT THE CORE! Put that stuff in the `app` directly using 
 Aspects brought to you by Go! AOP. Check out 
+
+#### PSR/Cache
+PSR/Cache offers a standard easy to use caching library with various adapters of which we by default use
+filesystem. There might be better caching systems but we were looking for something basic and easy.
+You can always implement your own of course.

@@ -5,8 +5,6 @@ namespace KickAss\Commerce;
 use Go\Core\AspectKernel;
 use Go\Core\AspectContainer;
 
-use Example\Project\Product\Aspect\ExampleProductAspect;
-
 /**
  * Application Aspect Kernel
  */
@@ -21,6 +19,7 @@ class ApplicationAspectKernel extends AspectKernel
      */
     protected function configureAop(AspectContainer $container)
     {
-        $container->registerAspect(new ExampleProductAspect());
+        $container->registerAspect(new \Example\Project\Product\Aspect\ExampleProductAspect());
+        $container->registerAspect(new \KickAss\Commerce\Product\Cache\Product());
     }
 }

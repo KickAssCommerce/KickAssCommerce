@@ -4,7 +4,7 @@ namespace KickAss\Commerce\Product\Test;
 
 use PHPUnit\Framework\TestCase;
 use KickAss\Commerce\Product\Repository\Product as ProductRepository;
-use KickAss\Commerce\Bridge\Moltin\Product as MoltinProduct;
+use KickAss\Moltin\Bridge\Moltin\Product as MoltinProduct;
 use \Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 
 

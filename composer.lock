@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1cef047dfdc6c2540e55197ca4f5c29f",
-    "content-hash": "9de0ba37651fd18678fe2fd6ac738451",
+    "hash": "fb6134e97c1dfb28a3d6368834371181",
+    "content-hash": "15001e36059eb918bcb16febb5314d4b",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -33,6 +33,36 @@
             ],
             "description": "Promoting the interoperability of container objects (DIC, SL, etc.)",
             "time": "2014-12-30 15:22:37"
+        },
+        {
+            "name": "kickasscommerce/moltin",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/KickAssCommerce/moltin.git",
+                "reference": "6f48e624edc64d3d1d3c11c78473ff4aa5448162"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/KickAssCommerce/moltin/zipball/6f48e624edc64d3d1d3c11c78473ff4aa5448162",
+                "reference": "6f48e624edc64d3d1d3c11c78473ff4aa5448162",
+                "shasum": ""
+            },
+            "type": "kickass-bundle",
+            "autoload": {
+                "psr-4": {
+                    "KickAss\\Moltin\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Bridge library for Moltin",
+            "support": {
+                "source": "https://github.com/KickAssCommerce/moltin/tree/0.1.0",
+                "issues": "https://github.com/KickAssCommerce/moltin/issues"
+            },
+            "time": "2017-02-12 00:02:48"
         },
         {
             "name": "moltin/php-sdk",

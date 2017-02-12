@@ -3,12 +3,17 @@
     "description": "A small proof of concept for Moltin",
     "type": "project",
     "license": "MIT",
+    "repositories": [
+        { "type": "vcs", "url": "git@github.com:KickAssCommerce/moltin.git" }
+    ],
     "require": {
         "vlucas/phpdotenv": "*",
         "slim/slim": "*",
         "moltin/php-sdk": "*",
         "symfony/serializer": "^3.2",
-        "symfony/property-access": "^3.2"
+        "symfony/property-access": "^3.2",
+
+        "kickasscommerce/moltin": "*"
     },
     "require-dev": {
         "phpunit/phpunit": "*"

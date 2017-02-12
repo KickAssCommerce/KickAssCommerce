@@ -1,4 +1,5 @@
 vendor/
 storage/cache/aop/*
+storage/cache/api/*
 !storage/cache/aop/.gitkeep
 .env

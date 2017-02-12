@@ -27,8 +27,6 @@ class Product implements Aspect
      * @return \KickAss\Commerce\Product\Map\Product
      *
      * @Around("execution(public KickAss\Commerce\Product\Repository\Product->loadByAttribute(*))")
-     *
-     * #@After("execution(public KickAss\Moltin\Bridge\Moltin\getProductItemByAttribute->loadByAttribute(*))") // not working for some reason
      */
     public function afterMethodExecution(MethodInvocation $invocation)
     {

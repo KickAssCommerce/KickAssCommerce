@@ -24,3 +24,5 @@ Currently built on Moltin but PRs for other systems are welcome
 
 ## More information
 - check the [Philosophy document](https://github.com/KickAssCommerce/KickAssCommerce/blob/develop/doc/philosophy.md)
+- check our [alpha roadmap](https://github.com/KickAssCommerce/KickAssCommerce/projects/1) or 
+create a ticket / PR to help us move this project

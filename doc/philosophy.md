@@ -12,6 +12,14 @@ the ability to use the libraries you want, the Javascript framework you want and
 
 ## Architecture
 
+#### Avoid being monolithic 
+Swapping out any part of the application for another solution should be easy. The idea of KickAss is to offer
+API based middleware between various services.
+
+#### Loose coupling 
+We want to have you choose the libraries and techstack you work with. The goal is to make all code undependant 
+of each other by using Dependency Injection.
+
 #### Domain oriented paths
 Classes are ordered by their domain. Anything concerning products (except bridge classes) can be find in `src/Product`.
 Wondering where you can find a class? Just think of what domain it belongs to.

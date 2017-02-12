@@ -24,3 +24,6 @@ Currently built on Moltin but PRs for other systems are welcome
 
 ## More information
 - check the [Philosophy document](https://github.com/KickAssCommerce/KickAssCommerce/blob/develop/doc/philosophy.md)
+
+## Examples
+Anything in the `app` directory is example code. The `app` directory should be used for your project code.

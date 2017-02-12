@@ -30,3 +30,7 @@ for credentials, basic feature flags and other small settings
 
 #### Symfony serializer
 Because we love to convert anything to everything and nothing beats Symfony serializer
+
+#### Go! AOP
+You want to add business logic? Of course you do! Just DONT EDIT THE CORE! Put that stuff in the `app` directly using 
+Aspects brought to you by Go! AOP. Check out 

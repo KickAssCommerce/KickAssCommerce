@@ -1,4 +1,4 @@
 vendor/
-storage/*
+storage/cache/aop/*
 !storage/cache/aop/.gitkeep
 .env

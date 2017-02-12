@@ -11,7 +11,7 @@ use Go\Lang\Annotation\Around;
 use Go\Lang\Annotation\Pointcut;
 
 /**
- * Monitor aspect
+ * Product aspects
  */
 class ExampleProductAspect implements Aspect
 {

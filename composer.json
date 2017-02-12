@@ -13,7 +13,8 @@
         "symfony/serializer": "^3.2",
         "symfony/property-access": "^3.2",
 
-        "kickasscommerce/moltin": "*"
+        "kickasscommerce/moltin": "dev-master",
+        "symfony/console": "^3.2"
     },
     "require-dev": {
         "phpunit/phpunit": "*"

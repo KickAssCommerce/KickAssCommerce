@@ -6,8 +6,10 @@ require 'bootstrap/env.php';
 
 use Symfony\Component\Console\Application;
 
+use KickAss\Commerce\Product\Command\CacheCommand as ProductCacheCommand;
+
 $application = new Application();
 
-// ... register commands
+$application->add(new ProductCacheCommand());
 
 $application->run();

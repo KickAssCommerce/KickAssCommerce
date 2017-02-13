@@ -48,8 +48,9 @@ class Product implements Aspect
         /** @var \KickAss\Commerce\Product\Map\Product $returnValue */
         $returnValue = $invocation->proceed();
 
-        $item->set($normalizer->normalize($returnValue, 'array'));
-        $item->expiresAfter(60);
+        $item->set($normalizer->normalize($returnValue, 'array'))
+            ->setTags(['products']);
+        $item->expiresAfter(3600);
 
         $pool->save($item);
 

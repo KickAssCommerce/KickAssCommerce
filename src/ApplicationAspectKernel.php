@@ -17,9 +17,8 @@ class ApplicationAspectKernel extends AspectKernel
      * @param AspectContainer $container
      * @return void
      */
-    protected function configureAop(AspectContainer $container)
+    public function configureAop(AspectContainer $container)
     {
-        $container->registerAspect(new \Example\Project\Product\Aspect\ExampleProductAspect());
         $container->registerAspect(new \KickAss\Commerce\Product\Cache\Product());
     }
 }

@@ -12,8 +12,9 @@
         "moltin/php-sdk": "*",
         "symfony/serializer": "^3.2",
         "symfony/property-access": "^3.2",
-
+        "goaop/framework": "^2.1",
         "kickasscommerce/moltin": "dev-master",
+        "cache/filesystem-adapter": "^0.3.3",
         "symfony/console": "^3.2"
     },
     "require-dev": {
@@ -21,7 +22,8 @@
     },
     "autoload": {
         "psr-4": {
-            "KickAss\\Commerce\\": "src/"
+            "KickAss\\Commerce\\": "src/",
+            "Example\\Project\\": "app/"
         }
     }
 }

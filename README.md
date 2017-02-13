@@ -1,6 +1,6 @@
 # KickAss Commerce
 
-A small proof of concept for building and eCommerce system based on an underlying API system.
+A small proof of concept for building an eCommerce system based on an underlying API system.
 
 Currently built on Moltin but PRs for other systems are welcome
 
@@ -24,6 +24,8 @@ Currently built on Moltin but PRs for other systems are welcome
 
 ## More information
 - check the [Philosophy document](https://github.com/KickAssCommerce/KickAssCommerce/blob/develop/doc/philosophy.md)
+- check our [alpha roadmap](https://github.com/KickAssCommerce/KickAssCommerce/projects/1) or 
+create a ticket / PR to help us move this project
 
 ## Examples
 Anything in the `app` directory is example code. The `app` directory should be used for your project code.

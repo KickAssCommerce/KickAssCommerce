@@ -1,6 +1,6 @@
 # KickAss Commerce
 
-A small proof of concept for building and eCommerce system based on an underlying API system.
+A small proof of concept for building an eCommerce system based on an underlying API system.
 
 Currently built on Moltin but PRs for other systems are welcome
 

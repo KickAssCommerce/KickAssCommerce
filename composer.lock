@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "50c6306fdd123d9d6f3976534d902fa7",
-    "content-hash": "1c0461165b13ccb73e10ed4b66914304",
+    "hash": "6058223e2f666f9b65bc277fe6b9498f",
+    "content-hash": "d7c930d7eecdcd5c0bbd7ab78090a9a2",
     "packages": [
         {
             "name": "cache/adapter-common",
@@ -506,12 +506,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/KickAssCommerce/moltin.git",
-                "reference": "0dff4c40d1fdd710ec5a52c05475ee1faefd6134"
+                "reference": "291debbd5cd4ce9a243d650c506411ff3e5b23ff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KickAssCommerce/moltin/zipball/0dff4c40d1fdd710ec5a52c05475ee1faefd6134",
-                "reference": "0dff4c40d1fdd710ec5a52c05475ee1faefd6134",
+                "url": "https://api.github.com/repos/KickAssCommerce/moltin/zipball/291debbd5cd4ce9a243d650c506411ff3e5b23ff",
+                "reference": "291debbd5cd4ce9a243d650c506411ff3e5b23ff",
                 "shasum": ""
             },
             "type": "kickass-bundle",
@@ -528,7 +528,7 @@
                 "source": "https://github.com/KickAssCommerce/moltin/tree/master",
                 "issues": "https://github.com/KickAssCommerce/moltin/issues"
             },
-            "time": "2017-02-12 15:41:54"
+            "time": "2017-02-12 15:46:26"
         },
         {
             "name": "league/flysystem",

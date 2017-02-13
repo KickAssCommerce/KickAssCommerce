@@ -13,6 +13,8 @@ Currently built on Moltin but PRs for other systems are welcome
 
 ## Authors
 
+For more information about the KickAss team and to apply for a position please us our [team repository](https://github.com/KickAssCommerce/team-kickass).
+
 - Sander Mangel <http://www.twitter.com/sandermangel>
 - David Manners <http://www.twitter.com/mannersd>
 

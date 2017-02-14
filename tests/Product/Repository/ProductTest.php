@@ -1,6 +1,6 @@
 <?php
 
-namespace KickAss\Commerce\Product\Test;
+namespace KickAss\Commerce\Product\Repository;
 
 use PHPUnit\Framework\TestCase;
 use KickAss\Commerce\Product\Repository\Product as ProductRepository;

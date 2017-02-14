@@ -10,18 +10,19 @@ class Product
     private $sku;
 
     /**
+     * Product constructor.
+     * @param string $sku
+     */
+    public function __construct(string $sku)
+    {
+        $this->sku = $sku;
+    }
+
+    /**
      * @return string
      */
     public function getSku()
     {
         return $this->sku;
-    }
-
-    /**
-     * @param $sku
-     */
-    public function setSku($sku)
-    {
-        $this->sku = $sku;
     }
 }

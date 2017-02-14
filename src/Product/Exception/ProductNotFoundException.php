@@ -2,5 +2,5 @@
 
 namespace KickAss\Commerce\Product\Exception;
 
-class ProductNowFoundException extends \RuntimeException
+class ProductNotFoundException extends \RuntimeException
 {}

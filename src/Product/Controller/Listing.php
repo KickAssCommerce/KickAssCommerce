@@ -2,7 +2,7 @@
 
 namespace KickAss\Commerce\Product\Controller;
 
-use KickAss\Commerce\Application\AuthenticatorInterface;
+use KickAss\Authentication\AuthenticatorInterface;
 use KickAss\Commerce\Product\Map\Product;
 use KickAss\Commerce\Product\Repository\ProductInterface;
 use Psr\Http\Message\ServerRequestInterface;
@@ -14,10 +14,12 @@ class Listing
      * @var \Psr\Http\Message\ResponseInterface
      */
     private $response;
+
     /**
-     * @var \KickAss\Commerce\Application\AuthenticatorInterface
+     * @var AuthenticatorInterface
      */
     private $authenticator;
+
     /**
      * @var \KickAss\Commerce\Product\Repository\ProductInterface
      */

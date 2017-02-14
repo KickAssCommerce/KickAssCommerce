@@ -2,7 +2,7 @@
 
 namespace KickAss\Commerce\Product\Controller;
 
-use KickAss\Commerce\Application\AuthenticatorInterface;
+use KickAss\Authentication\AuthenticatorInterface;
 use KickAss\Commerce\Product\Repository\ProductInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;

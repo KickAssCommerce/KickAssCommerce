@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "9ed2906880a8740875a55acf15c6b88a",
+    "content-hash": "4adffb4e9c1d8355577bd9fe4d121ba4",
     "packages": [
         {
             "name": "cache/adapter-common",
@@ -498,6 +498,23 @@
                 "parsing"
             ],
             "time": "2013-01-29T21:29:14+00:00"
+        },
+        {
+            "name": "kickasscommerce/authentication",
+            "version": "dev-sub-module-poc",
+            "dist": {
+                "type": "path",
+                "url": "src/Authentication",
+                "reference": "5dd944274cd183dddc2cbe825aa1f4fc04809719",
+                "shasum": null
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "KickAss\\Authentication\\": "*"
+                }
+            },
+            "description": "Authentication lib for KickAss Commerce."
         },
         {
             "name": "kickasscommerce/moltin",
@@ -2875,7 +2892,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "kickasscommerce/moltin": 20
+        "kickasscommerce/moltin": 20,
+        "kickasscommerce/authentication": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

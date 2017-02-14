@@ -4,7 +4,8 @@
     "type": "project",
     "license": "MIT",
     "repositories": [
-        { "type": "vcs", "url": "git@github.com:KickAssCommerce/moltin.git" }
+        { "type": "vcs", "url": "git@github.com:KickAssCommerce/moltin.git" },
+        { "type": "path", "url": "src/*" }
     ],
     "require": {
         "vlucas/phpdotenv": "*",
@@ -15,7 +16,8 @@
         "goaop/framework": "^2.1",
         "kickasscommerce/moltin": "dev-master",
         "cache/filesystem-adapter": "^0.3.3",
-        "symfony/console": "^3.2"
+        "symfony/console": "^3.2",
+        "kickasscommerce/authentication": "*@dev"
     },
     "require-dev": {
         "phpunit/phpunit": "*",
@@ -24,6 +26,7 @@
     "autoload": {
         "psr-4": {
             "KickAss\\Commerce\\": "src/",
+            "KickAss\\Authentication\\": "src/Authentication",
             "Example\\Project\\": "app/"
         }
     },

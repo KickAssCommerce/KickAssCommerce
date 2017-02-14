@@ -505,12 +505,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/KickAssCommerce/moltin.git",
-                "reference": "291debbd5cd4ce9a243d650c506411ff3e5b23ff"
+                "reference": "a119164ea552a5ed292b709f3b373c5767281640"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KickAssCommerce/moltin/zipball/291debbd5cd4ce9a243d650c506411ff3e5b23ff",
-                "reference": "291debbd5cd4ce9a243d650c506411ff3e5b23ff",
+                "url": "https://api.github.com/repos/KickAssCommerce/moltin/zipball/a119164ea552a5ed292b709f3b373c5767281640",
+                "reference": "a119164ea552a5ed292b709f3b373c5767281640",
                 "shasum": ""
             },
             "type": "kickass-bundle",
@@ -527,7 +527,7 @@
                 "source": "https://github.com/KickAssCommerce/moltin/tree/master",
                 "issues": "https://github.com/KickAssCommerce/moltin/issues"
             },
-            "time": "2017-02-12 15:46:26"
+            "time": "2017-02-14 08:34:36"
         },
         {
             "name": "league/flysystem",

@@ -40,9 +40,8 @@ class CacheCommand extends Command
             $pool->clearTags(['products']);
 
             $output->writeln(['done']);
-        } catch(\Exception $e) {
+        } catch (\Exception $e) {
             $output->writeln(['error while flushing']);
         }
-
     }
 }

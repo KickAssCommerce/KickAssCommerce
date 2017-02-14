@@ -22,7 +22,7 @@ For more information about the KickAss team and to apply for a position please u
 ## Installation
 - git clone git@github.com:KickAssCommerce/KickAssCommerce.git
 - composer install
-- check the `/doc/` folder for NginX configuration
+- check the `/doc/` folder for NginX / htaccess configuration
 - rename the `/doc/.env.template` to `/.env` and fill out the details
 
 ## More information

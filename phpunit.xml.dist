@@ -9,7 +9,7 @@
          verbose="true">
     <testsuites>
         <testsuite name="Product domain">
-            <directory>./src/Product/Test/</directory>
+            <directory>./tests/</directory>
         </testsuite>
     </testsuites>
 </phpunit>

@@ -35,7 +35,7 @@ class Product implements Aspect
 
         $pool = new FilesystemCachePool($filesystem);
 
-        $cacheKey = "products_" . implode('_', $invocation->getArguments());
+        $cacheKey = "products_" . md5(implode('_', $invocation->getArguments()));
 
         $item = $pool->getItem($cacheKey);
         $normalizer = new ObjectNormalizer();

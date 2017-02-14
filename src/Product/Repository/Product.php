@@ -2,21 +2,30 @@
 
 namespace KickAss\Commerce\Product\Repository;
 
+use KickAss\Commerce\Application\ProductInterface as ApplicationProductInterface;
+use KickAss\Commerce\Product\Map\Product as MapProduct;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+
 class Product implements ProductInterface
 {
     /**
      * @var \KickAss\Commerce\Application\ProductInterface
      */
     private $product;
-
     /**
      * @var \Symfony\Component\Serializer\Normalizer\ObjectNormalizer
      */
     private $normalizer;
 
+    /**
+     * Product constructor.
+     *
+     * @param ApplicationProductInterface $product
+     * @param ObjectNormalizer $normalizer
+     */
     public function __construct(
-        \KickAss\Commerce\Application\ProductInterface $product,
-        \Symfony\Component\Serializer\Normalizer\ObjectNormalizer $normalizer
+        ApplicationProductInterface $product,
+        ObjectNormalizer $normalizer
     ) {
         $this->product = $product;
         $this->normalizer = $normalizer;
@@ -30,7 +39,7 @@ class Product implements ProductInterface
     {
         $productInfo = $this->product->getProductItem($id);
 
-        return $this->populateProductReporitory($productInfo['result']);
+        return $this->populateProductRepository($productInfo['result']);
     }
 
     /**
@@ -42,7 +51,7 @@ class Product implements ProductInterface
     {
         $productInfo = $this->product->getProductItemByAttribute($attribute, $value);
 
-        return $this->populateProductReporitory($productInfo);
+        return $this->populateProductRepository($productInfo);
     }
 
     /**
@@ -50,18 +59,16 @@ class Product implements ProductInterface
      * @return \KickAss\Commerce\Product\Map\Product
      * @throws \Symfony\Component\Serializer\Exception\UnexpectedValueException
      */
-    public function populateProductReporitory($productData)
+    public function populateProductRepository($productData)
     {
-        return $this->normalizer->denormalize($productData, \KickAss\Commerce\Product\Map\Product::class);
+        /** @var MapProduct $product */
+        $product = $this->normalizer->denormalize($productData, MapProduct::class);
+        return $product;
     }
 
     /**
      * @param array $filters
-     * @return \KickAss\Commerce\Map\Product[]
-     */
-    /**
-     * @param array $filters
-     * @return \KickAss\Commerce\Map\Product[]
+     * @return \KickAss\Commerce\Product\Map\Product[]
      * @throws \Symfony\Component\Serializer\Exception\UnexpectedValueException
      */
     public function search(array $filters = array())
@@ -69,7 +76,7 @@ class Product implements ProductInterface
         $productInfo = $this->product->getProductList($filters);
         $products = [];
         foreach ($productInfo['result'] as $product) {
-            $products[] = $this->normalizer->denormalize($product, \KickAss\Commerce\Product\Map\Product::class);
+            $products[] = $this->normalizer->denormalize($product, MapProduct::class);
         }
         return $products;
     }

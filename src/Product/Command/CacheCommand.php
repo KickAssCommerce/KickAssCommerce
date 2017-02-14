@@ -20,7 +20,9 @@ class CacheCommand extends Command
         ;
     }
 
-    // ...
+    /**
+     * {@inheritDoc}
+     */
     public function execute(InputInterface $input, OutputInterface $output)
     {
         $output->writeln([
@@ -38,7 +40,7 @@ class CacheCommand extends Command
             $pool->clearTags(['products']);
 
             $output->writeln(['done']);
-        } catch(Exception $e) {
+        } catch(\Exception $e) {
             $output->writeln(['error while flushing']);
         }
 

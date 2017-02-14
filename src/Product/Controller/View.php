@@ -2,39 +2,47 @@
 
 namespace KickAss\Commerce\Product\Controller;
 
+use KickAss\Commerce\Application\AuthenticatorInterface;
+use KickAss\Commerce\Product\Repository\ProductInterface;
+use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\ServerRequestInterface;
+
 class View
 {
     /**
-     * @var \Psr\Http\Message\ResponseInterface
+     * @var ResponseInterface
      */
     private $response;
-
     /**
-     * @var \KickAss\Commerce\Application\AuthenticatorInterface
+     * @var AuthenticatorInterface
      */
     private $authenticator;
-
     /**
-     * @var \KickAss\Commerce\Product\Repository\ProductInterface
+     * @var ProductInterface
      */
     private $product;
 
     /**
      * View constructor.
-     * @param \KickAss\Commerce\Application\AuthenticatorInterface $authenticator
-     * @param \KickAss\Commerce\Product\Repository\ProductInterface $product
+     * @param AuthenticatorInterface $authenticator
+     * @param ProductInterface $product
      */
     public function __construct(
-        \KickAss\Commerce\Application\AuthenticatorInterface $authenticator,
-        \KickAss\Commerce\Product\Repository\ProductInterface $product
+        AuthenticatorInterface $authenticator,
+        ProductInterface $product
     ) {
         $this->authenticator = $authenticator;
         $this->product = $product;
     }
 
+    /**
+     * @param ServerRequestInterface $request
+     * @param ResponseInterface $response
+     * @return ResponseInterface
+     */
     public function __invoke(
-        \Psr\Http\Message\ServerRequestInterface $request,
-        \Psr\Http\Message\ResponseInterface $response
+        ServerRequestInterface $request,
+        ResponseInterface $response
     ) {
         $this->response = $response;
         $this->authenticator->authenticate();

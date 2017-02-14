@@ -12,6 +12,7 @@ use Go\Lang\Annotation\Pointcut;
 use League\Flysystem\Adapter\Local;
 use League\Flysystem\Filesystem;
 use Cache\Adapter\Filesystem\FilesystemCachePool;
+use KickAss\Commerce\Product\Map\Product as MapProduct;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 
 /**
@@ -41,7 +42,9 @@ class Product implements Aspect
         $normalizer = new ObjectNormalizer();
 
         if ($item->isHit()) { // found the item in cache
-            return $normalizer->denormalize($item->get(), \KickAss\Commerce\Product\Map\Product::class);
+            /** @var MapProduct $cacheItem */
+            $cacheItem = $normalizer->denormalize($item->get(), MapProduct::class);
+            return $cacheItem;
         }
 
         // execute the API call

@@ -12,10 +12,14 @@ class Product
     /**
      * @return string
      */
-    public function getSku(){
+    public function getSku()
+    {
         return $this->sku;
     }
 
+    /**
+     * @param $sku
+     */
     public function setSku($sku)
     {
         $this->sku = $sku;

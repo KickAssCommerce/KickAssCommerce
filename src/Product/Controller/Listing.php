@@ -2,18 +2,22 @@
 
 namespace KickAss\Commerce\Product\Controller;
 
+use KickAss\Commerce\Application\AuthenticatorInterface;
+use KickAss\Commerce\Product\Map\Product;
+use KickAss\Commerce\Product\Repository\ProductInterface;
+use Psr\Http\Message\ServerRequestInterface;
+use Psr\Http\Message\ResponseInterface;
+
 class Listing
 {
     /**
      * @var \Psr\Http\Message\ResponseInterface
      */
     private $response;
-
     /**
      * @var \KickAss\Commerce\Application\AuthenticatorInterface
      */
     private $authenticator;
-
     /**
      * @var \KickAss\Commerce\Product\Repository\ProductInterface
      */
@@ -21,20 +25,25 @@ class Listing
 
     /**
      * Listing constructor.
-     * @param \KickAss\Commerce\Application\AuthenticatorInterface $authenticator
-     * @param \KickAss\Commerce\Product\Repository\ProductInterface $product
+     * @param AuthenticatorInterface $authenticator
+     * @param ProductInterface $product
      */
     public function __construct(
-        \KickAss\Commerce\Application\AuthenticatorInterface $authenticator,
-        \KickAss\Commerce\Product\Repository\ProductInterface $product
+        AuthenticatorInterface $authenticator,
+        ProductInterface $product
     ) {
         $this->authenticator = $authenticator;
         $this->product = $product;
     }
 
+    /**
+     * @param ServerRequestInterface $request
+     * @param ResponseInterface $response
+     * @return ResponseInterface
+     */
     public function __invoke(
-        \Psr\Http\Message\ServerRequestInterface $request,
-        \Psr\Http\Message\ResponseInterface $response
+        ServerRequestInterface $request,
+        ResponseInterface $response
     ) {
         $this->response = $response;
         $this->authenticator->authenticate();
@@ -59,10 +68,10 @@ class Listing
     }
 
     /**
-     * @param \KickAss\Commerce\Map\Product $product
+     * @param Product $product
      * @param $key
      */
-    private function displayProductDetails(\KickAss\Commerce\Map\Product $product, $key)
+    private function displayProductDetails(Product $product, $key)
     {
         $this->response->write('<br />');
         $this->response->write('ProductNumber: ' . $key . '<br />');

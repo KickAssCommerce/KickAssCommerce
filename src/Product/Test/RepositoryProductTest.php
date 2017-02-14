@@ -7,7 +7,6 @@ use KickAss\Commerce\Product\Repository\Product as ProductRepository;
 use KickAss\Moltin\Bridge\Moltin\Product as MoltinProduct;
 use \Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 
-
 /**
  * @covers ProductRepository
  */
@@ -23,7 +22,7 @@ final class RepositoryProductTest extends TestCase
             new ObjectNormalizer()
         );
 
-        $map = $product->populateProductReporitory([
+        $map = $product->populateProductRepository([
             'sku' => 'foobar'
         ]);
 

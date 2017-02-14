@@ -6,7 +6,7 @@ interface ProductInterface
 {
     /**
      * @param int $id
-     * @return \KickAss\Commerce\Map\Product
+     * @return \KickAss\Commerce\Product\Map\Product
      */
     public function load($id);
 
@@ -15,4 +15,11 @@ interface ProductInterface
      * @return array
      */
     public function search(array $filters = array());
+
+    /**
+     * @param string $attribute
+     * @param string $value
+     * @return mixed
+     */
+    public function loadByAttribute(string $attribute, string $value);
 }

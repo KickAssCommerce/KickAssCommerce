@@ -18,6 +18,7 @@ For more information about the KickAss team and to apply for a position please u
 
 - Sander Mangel <http://www.twitter.com/sandermangel>
 - David Manners <http://www.twitter.com/mannersd>
+- Adam Paterson <http://www.twitter.com/adam_paterson>
 
 ## Installation
 - git clone git@github.com:KickAssCommerce/KickAssCommerce.git

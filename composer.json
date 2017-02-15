@@ -26,6 +26,7 @@
         "psr-4": {
             "KickAss\\Commerce\\": "src/Commerce",
             "KickAss\\Authentication\\": "src/Authentication/src",
+            "KickAss\\Toolbox\\": "src/Toolbox/src",
             "KickAss\\Moltin\\": "src/Moltin/src",
             "Example\\Project\\": "app/"
         }

@@ -1,8 +1,5 @@
 # KickAss Commerce
 
-[![Latest Version on GitHub][ico-version]][link-release]
-[![Software License][ico-license]](LICENSE.md)
-
 A small proof of concept for building an eCommerce system based on an underlying API system.
 
 Currently built on Moltin but PRs for other systems are welcome

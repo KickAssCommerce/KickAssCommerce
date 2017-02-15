@@ -4,7 +4,7 @@
     "type": "library",
     "autoload": {
         "psr-4": {
-            "KickAss\\Authentication\\": "*"
+            "KickAss\\Authentication\\": "src/"
         }
     }
 }

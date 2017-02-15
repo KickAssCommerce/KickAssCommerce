@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "4adffb4e9c1d8355577bd9fe4d121ba4",
+    "content-hash": "20ba1171439b4719afc318af13888bf2",
     "packages": [
         {
             "name": "cache/adapter-common",
@@ -184,17 +184,20 @@
         },
         {
             "name": "container-interop/container-interop",
-            "version": "1.1.0",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/container-interop/container-interop.git",
-                "reference": "fc08354828f8fd3245f77a66b9e23a6bca48297e"
+                "reference": "79cbf1341c22ec75643d841642dd5d6acd83bdb8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/container-interop/container-interop/zipball/fc08354828f8fd3245f77a66b9e23a6bca48297e",
-                "reference": "fc08354828f8fd3245f77a66b9e23a6bca48297e",
+                "url": "https://api.github.com/repos/container-interop/container-interop/zipball/79cbf1341c22ec75643d841642dd5d6acd83bdb8",
+                "reference": "79cbf1341c22ec75643d841642dd5d6acd83bdb8",
                 "shasum": ""
+            },
+            "require": {
+                "psr/container": "^1.0"
             },
             "type": "library",
             "autoload": {
@@ -207,7 +210,8 @@
                 "MIT"
             ],
             "description": "Promoting the interoperability of container objects (DIC, SL, etc.)",
-            "time": "2014-12-30T15:22:37+00:00"
+            "homepage": "https://github.com/container-interop/container-interop",
+            "time": "2017-02-14T19:40:03+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -505,30 +509,28 @@
             "dist": {
                 "type": "path",
                 "url": "src/Authentication",
-                "reference": "5dd944274cd183dddc2cbe825aa1f4fc04809719",
+                "reference": "90a50d51508cdb1d3b76aaf0e0d04143ab105fa2",
                 "shasum": null
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "KickAss\\Authentication\\": "*"
+                    "KickAss\\Authentication\\": "src/"
                 }
             },
             "description": "Authentication lib for KickAss Commerce."
         },
         {
             "name": "kickasscommerce/moltin",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/KickAssCommerce/moltin.git",
-                "reference": "a119164ea552a5ed292b709f3b373c5767281640"
-            },
+            "version": "dev-sub-module-poc",
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/KickAssCommerce/moltin/zipball/a119164ea552a5ed292b709f3b373c5767281640",
-                "reference": "a119164ea552a5ed292b709f3b373c5767281640",
-                "shasum": ""
+                "type": "path",
+                "url": "src/Moltin",
+                "reference": "60b2e868391a45bf2d8c1c7d6c8a7c5ca2e28250",
+                "shasum": null
+            },
+            "require": {
+                "kickasscommerce/authentication": "*@dev"
             },
             "type": "kickass-bundle",
             "autoload": {
@@ -539,12 +541,7 @@
             "license": [
                 "MIT"
             ],
-            "description": "Bridge library for Moltin",
-            "support": {
-                "source": "https://github.com/KickAssCommerce/moltin/tree/master",
-                "issues": "https://github.com/KickAssCommerce/moltin/issues"
-            },
-            "time": "2017-02-14 08:34:36"
+            "description": "Bridge library for Moltin"
         },
         {
             "name": "league/flysystem",
@@ -900,6 +897,55 @@
                 "psr-6"
             ],
             "time": "2016-08-06T20:24:11+00:00"
+        },
+        {
+            "name": "psr/container",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/container.git",
+                "reference": "b7ce3b176482dbbc1245ebf52b181af44c2cf55f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/container/zipball/b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
+                "reference": "b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Container\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common Container Interface (PHP FIG PSR-11)",
+            "homepage": "https://github.com/php-fig/container",
+            "keywords": [
+                "PSR-11",
+                "container",
+                "container-interface",
+                "container-interop",
+                "psr"
+            ],
+            "time": "2017-02-14T16:28:37+00:00"
         },
         {
             "name": "psr/http-message",

@@ -1,0 +1,15 @@
+{
+    "name": "kickasscommerce/moltin",
+    "description": "Bridge library for Moltin",
+    "type": "kickass-bundle",
+    "license": "MIT",
+    "require": {
+        "kickasscommerce/authentication": "*@dev"
+    },
+    "require-dev": {},
+    "autoload": {
+        "psr-4": {
+            "KickAss\\Moltin\\": "src/"
+        }
+    }
+}

@@ -33,7 +33,8 @@ class Product implements ProductInterface
 
     /**
      * @param int $id
-     * @return \KickAss\Commerce\Product\Map\Product
+     * @return MapProduct
+     * @throws \Symfony\Component\Serializer\Exception\UnexpectedValueException
      */
     public function load($id)
     {
@@ -45,7 +46,8 @@ class Product implements ProductInterface
     /**
      * @param string $attribute
      * @param string $value
-     * @return \KickAss\Commerce\Product\Map\Product
+     * @return MapProduct
+     * @throws \Symfony\Component\Serializer\Exception\UnexpectedValueException
      */
     public function loadByAttribute(string $attribute, string $value)
     {

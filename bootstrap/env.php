@@ -15,15 +15,17 @@ date_default_timezone_set(getenv('ENV_TIMEZONE'));
 
 // Initialize an application aspect container
 $applicationAspectKernel = \KickAss\Commerce\ApplicationAspectKernel::getInstance();
-$applicationAspectKernel->init(array(
-    'debug' => (getenv('ENV_DEBUG') ? true : false),
-    // Cache directory
-    'cacheDir'  => APP_BASE_DIR . 'storage/cache/aop',
-    // Include paths restricts the directories where aspects should be applied, or empty for all source files
-    'includePaths' => array(
-        APP_BASE_DIR . 'src/'
-    )
-));
+$applicationAspectKernel->init(
+    [
+        'debug' => (getenv('ENV_DEBUG') ? true : false),
+        // Cache directory
+        'cacheDir'  => APP_BASE_DIR . 'storage/cache/aop',
+        // Include paths restricts the directories where aspects should be applied, or empty for all source files
+        'includePaths' => [
+            APP_BASE_DIR . 'src/'
+        ]
+    ]
+);
 
 // routing urls to controllers
 $routes = [

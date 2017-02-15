@@ -18,7 +18,7 @@ $application = new Application("
      '/|||\\`
        '|`    
 
-A tool with it's tenticles 
+A tool with it's tentacles 
   in everything KickAss");
 
 $application->add(new ProductCacheCommand());

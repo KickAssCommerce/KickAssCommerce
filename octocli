@@ -7,6 +7,8 @@ require 'bootstrap/env.php';
 use Symfony\Component\Console\Application;
 
 use KickAss\Commerce\Product\Command\CacheCommand as ProductCacheCommand;
+use KickAss\Toolbox\Command\ProvisionEnvironmentCommand as EnvironmentCommand;
+
 
 $application = new Application("
      OCTOCLI
@@ -22,5 +24,6 @@ A tool with it's tentacles
   in everything KickAss");
 
 $application->add(new ProductCacheCommand());
+$application->add(new EnvironmentCommand());
 
 $application->run();

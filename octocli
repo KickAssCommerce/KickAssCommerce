@@ -8,7 +8,18 @@ use Symfony\Component\Console\Application;
 
 use KickAss\Commerce\Product\Command\CacheCommand as ProductCacheCommand;
 
-$application = new Application();
+$application = new Application("
+     OCTOCLI
+
+     -------
+     | @ @ |
+     -------
+      ).-.(
+     '/|||\\`
+       '|`    
+
+A tool with it's tenticles 
+  in everything KickAss");
 
 $application->add(new ProductCacheCommand());
 

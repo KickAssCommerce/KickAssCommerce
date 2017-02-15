@@ -13,7 +13,8 @@ class Product implements \KickAss\Commerce\Application\ProductInterface
      */
     public function getProductList(array $filter = [])
     {
-        return MoltinProduct::Search($filter);
+        $products = MoltinProduct::Search($filter);
+        return $products['result'];
     }
 
     /**
@@ -22,7 +23,8 @@ class Product implements \KickAss\Commerce\Application\ProductInterface
      */
     public function getProductItem(int $identifier)
     {
-        return MoltinProduct::Get($identifier);
+        $product = MoltinProduct::Get($identifier);
+        return $product['result'];
     }
 
     /**
@@ -41,14 +43,5 @@ class Product implements \KickAss\Commerce\Application\ProductInterface
         }
 
         throw new ProductException("Product not found");
-    }
-
-    /**
-     * @param array $terms
-     * @return array
-     */
-    public function getSearchResults(array $terms = array())
-    {
-        return MoltinProduct::Search($terms);
     }
 }

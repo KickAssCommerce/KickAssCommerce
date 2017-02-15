@@ -9,11 +9,12 @@ use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 class Product implements ProductInterface
 {
     /**
-     * @var \KickAss\Commerce\Application\ProductInterface
+     * @var ApplicationProductInterface
      */
     private $product;
+
     /**
-     * @var \Symfony\Component\Serializer\Normalizer\ObjectNormalizer
+     * @var ObjectNormalizer
      */
     private $normalizer;
 
@@ -40,7 +41,7 @@ class Product implements ProductInterface
     {
         $productInfo = $this->product->getProductItem($id);
 
-        return $this->populateProductRepository($productInfo['result']);
+        return $this->populateProductRepository($productInfo);
     }
 
     /**
@@ -58,10 +59,10 @@ class Product implements ProductInterface
 
     /**
      * @param array $productData
-     * @return \KickAss\Commerce\Product\Map\Product
+     * @return MapProduct
      * @throws \Symfony\Component\Serializer\Exception\UnexpectedValueException
      */
-    public function populateProductRepository($productData)
+    public function populateProductRepository(array $productData)
     {
         /** @var MapProduct $product */
         $product = $this->normalizer->denormalize($productData, MapProduct::class);
@@ -70,14 +71,14 @@ class Product implements ProductInterface
 
     /**
      * @param array $filters
-     * @return \KickAss\Commerce\Product\Map\Product[]
+     * @return MapProduct[]
      * @throws \Symfony\Component\Serializer\Exception\UnexpectedValueException
      */
     public function search(array $filters = array())
     {
         $productInfo = $this->product->getProductList($filters);
         $products = [];
-        foreach ($productInfo['result'] as $product) {
+        foreach ($productInfo as $product) {
             $products[] = $this->normalizer->denormalize($product, MapProduct::class);
         }
         return $products;

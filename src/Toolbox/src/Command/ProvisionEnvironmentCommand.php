@@ -27,7 +27,7 @@ class ProvisionEnvironmentCommand extends Command
         $branch = $input->getArgument('branch') ?? '$(git rev-parse --abbrev-ref HEAD)';
 
         // set up the right branch
-        $gitCheckAndPull = shell_exec("git checkout {$branch} && git pull origin {$branch}");
+        $gitCheckAndPull = shell_exec("git fetch origin && git checkout {$branch} && git pull origin {$branch}");
         $output->writeln($gitCheckAndPull);
 
         // composer install

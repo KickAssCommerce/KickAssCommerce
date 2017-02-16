@@ -9,7 +9,7 @@
     "require": {
         "vlucas/phpdotenv": "*",
         "slim/slim": "*",
-        "moltin/php-sdk": "*",
+        "moltin/php-sdk": "v2.x-dev",
         "symfony/serializer": "^3.2",
         "symfony/property-access": "^3.2",
         "goaop/framework": "^2.1",

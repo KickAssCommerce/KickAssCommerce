@@ -24,6 +24,11 @@ final class RepositoryProductTest extends TestCase
             ->willReturn(['sku' => 'sample-sku']);
         $this->moltinMock->method('getProductItemByAttribute')
             ->willReturn(['sku' => 'sample-sku']);
+        $this->moltinMock->method('getProductList')
+            ->willReturn([
+                ['sku' => 'sample-sku'],
+                ['sku' => 'second-sample']
+            ]);
 
         $this->product = new ProductRepository(
             $this->moltinMock,
@@ -48,5 +53,18 @@ final class RepositoryProductTest extends TestCase
 
         $this->assertEquals('sample-sku', $map->getSku());
         $this->assertInstanceOf(Product::class, $map);
+    }
+
+    public function testSearch()
+    {
+        $results = $this->product->search(['sku' => 'value']);
+
+        $this->assertInternalType('array', $results);
+        $this->assertEquals(2, count($results));
+        $first = $results[0];
+        $this->assertEquals('sample-sku', $first->getSku());
+        foreach ($results as $product) {
+            $this->assertInstanceOf(Product::class, $product);
+        }
     }
 }

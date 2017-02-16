@@ -63,6 +63,7 @@ final class RepositoryProductTest extends TestCase
         $this->assertEquals(2, count($results));
         $first = $results[0];
         $this->assertEquals('sample-sku', $first->getSku());
+        $this->assertContainsOnlyInstancesOf(Product::class, $results);
         foreach ($results as $product) {
             $this->assertInstanceOf(Product::class, $product);
         }

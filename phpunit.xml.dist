@@ -18,7 +18,7 @@
         </whitelist>
     </filter>
     <testsuites>
-        <testsuite name="Sitewards Setup Test Suite">
+        <testsuite name="KickAss Test Suite">
             <directory>./tests/</directory>
         </testsuite>
     </testsuites>

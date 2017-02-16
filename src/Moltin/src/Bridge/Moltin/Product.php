@@ -3,16 +3,25 @@
 namespace KickAss\Moltin\Bridge\Moltin;
 
 use Moltin\SDK\Facade\Product as MoltinProduct;
+use KickAss\Moltin\Bridge\Moltin\Client as MoltinClient;
 use KickAss\Commerce\Product\Exception\ProductNotFoundException as ProductException;
 
 class Product implements \KickAss\Commerce\Application\ProductInterface
 {
+    use MoltinClient;
+
+    protected $client;
+
     /**
      * @param array $filter
      * @return array
      */
     public function getProductList(array $filter = [])
     {
+        $response = $this->getClient()->products->all();
+        $products = $response->data();
+var_dump($products);exit;
+
         $products = MoltinProduct::Search($filter);
         return $products['result'];
     }

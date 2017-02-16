@@ -18,12 +18,10 @@ class Product implements \KickAss\Commerce\Application\ProductInterface
      */
     public function getProductList(array $filter = [])
     {
-        $response = $this->getClient()->products->all();
+        $response = $this->getClient()->products->all($filter);
         $products = $response->data();
-var_dump($products);exit;
-
-        $products = MoltinProduct::Search($filter);
-        return $products['result'];
+        
+        return $products;
     }
 
     /**

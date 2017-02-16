@@ -62,7 +62,7 @@ class Product implements ProductInterface
      * @return MapProduct
      * @throws \Symfony\Component\Serializer\Exception\UnexpectedValueException
      */
-    public function populateProductRepository(array $productData)
+    private function populateProductRepository(array $productData)
     {
         /** @var MapProduct $product */
         $product = $this->normalizer->denormalize($productData, MapProduct::class);

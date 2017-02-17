@@ -33,6 +33,7 @@
     },
     "scripts": {
         "check-style": "phpcs -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 src",
-        "fix-style": "phpcbf -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 src"
+        "fix-style": "phpcbf -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 src",
+        "test": "phpunit"
     }
 }

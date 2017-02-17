@@ -1,7 +1,12 @@
 <?php
 
 // load configuration
-$dotenv = new Dotenv\Dotenv(__DIR__ . '/../');
+if (file_exists(__DIR__.'/../.env')) {
+    $dotenv = new Dotenv\Dotenv(__DIR__ . '/../');
+} else {
+    $dotenv = new \Dotenv\Dotenv(__DIR__, '/../.env.dist');
+}
+
 $dotenv->load();
 
 // php environment

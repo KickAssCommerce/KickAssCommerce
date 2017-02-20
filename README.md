@@ -5,6 +5,7 @@
 [![Build Status][ico-travis]][link-travis]
 [![Coverage Status][ico-scrutinizer]][link-scrutinizer]
 [![Quality Score][ico-code-quality]][link-code-quality]
+[![Dependencies][ico-dependencies]][link-dependencies]
 [![Total Downloads][ico-downloads]][link-downloads]
 
 A small proof of concept for building an eCommerce system based on an underlying API system.
@@ -65,12 +66,14 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 [ico-travis]: https://img.shields.io/travis/kickasscommerce/kickasscommerce/master.svg?style=flat-square
 [ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/kickasscommerce/kickasscommerce.svg?style=flat-square
 [ico-code-quality]: https://img.shields.io/scrutinizer/g/kickasscommerce/kickasscommerce.svg?style=flat-square
+[ico-dependencies]: https://www.versioneye.com/user/projects/58aaee3cb4d2a20045c15806/badge.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/kickasscommerce/kickasscommerce.svg?style=flat-square
 
 [link-packagist]: https://packagist.org/packages/kickasscommerce/kickasscommerce
 [link-travis]: https://travis-ci.org/KickAssCommerce/KickAssCommerce
 [link-scrutinizer]: https://scrutinizer-ci.com/g/KickAssCommerce/KickAssCommerce/code-structure
 [link-code-quality]: https://scrutinizer-ci.com/g/KickAssCommerce/KickAssCommerce/
+[link-dependencies]: https://www.versioneye.com/user/projects/58aaee3cb4d2a20045c15806
 [link-downloads]: https://packagist.org/packages/kickasscommerce/kickasscommerce
 [link-author]: https://github.com/KickAssCommerce
 [link-contributors]: ../../contributors

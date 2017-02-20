@@ -63,7 +63,7 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 
 [ico-version]: https://img.shields.io/packagist/v/kickasscommerce/kickasscommerce.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/kickasscommerce/kickasscommerce/master.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/KickAssCommerce/KickAssCommerce.svg?style=flat-square
 [ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/kickasscommerce/kickasscommerce.svg?style=flat-square
 [ico-code-quality]: https://img.shields.io/scrutinizer/g/kickasscommerce/kickasscommerce.svg?style=flat-square
 [ico-dependencies]: https://www.versioneye.com/user/projects/58aaee3cb4d2a20045c15806/badge.svg?style=flat-square

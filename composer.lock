@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "0e6b9b7f17448e27bad9abfeb00cc080",
+    "content-hash": "6864b7f3f32fa36ef0a3ce1b52b7736c",
     "packages": [
         {
             "name": "cache/adapter-common",
@@ -504,44 +504,51 @@
             "time": "2013-01-29T21:29:14+00:00"
         },
         {
-            "name": "kickasscommerce/authentication",
-            "version": "dev-sub-module-poc",
+            "name": "kickasscommerce/framework",
+            "version": "dev-develop",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/KickAssCommerce/framework.git",
+                "reference": "5433f109bf217280db07c660a09400faec71926e"
+            },
             "dist": {
-                "type": "path",
-                "url": "src/Authentication",
-                "reference": "90a50d51508cdb1d3b76aaf0e0d04143ab105fa2",
-                "shasum": null
+                "type": "zip",
+                "url": "https://api.github.com/repos/KickAssCommerce/framework/zipball/5433f109bf217280db07c660a09400faec71926e",
+                "reference": "5433f109bf217280db07c660a09400faec71926e",
+                "shasum": ""
+            },
+            "require": {
+                "cache/filesystem-adapter": "^0.3.3",
+                "goaop/framework": "^2.1",
+                "moltin/php-sdk": "^1.3",
+                "slim/slim": "^3.7",
+                "symfony/console": "^3.2",
+                "symfony/property-access": "^3.2",
+                "symfony/serializer": "^3.2",
+                "vlucas/phpdotenv": "^2.4"
+            },
+            "replace": {
+                "kickasscommerce/authentication": "self.version",
+                "kickasscommerce/commerce": "self.version",
+                "kickasscommerce/moltin": "self.version",
+                "kickasscommerce/toolbox": "self.version"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^6.0",
+                "squizlabs/php_codesniffer": "^2.8"
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "KickAss\\Authentication\\": "src/"
+                    "KickAss\\": "src/"
                 }
             },
-            "description": "Authentication lib for KickAss Commerce."
-        },
-        {
-            "name": "kickasscommerce/moltin",
-            "version": "dev-sub-module-poc",
-            "dist": {
-                "type": "path",
-                "url": "src/Moltin",
-                "reference": "60b2e868391a45bf2d8c1c7d6c8a7c5ca2e28250",
-                "shasum": null
-            },
-            "require": {
-                "kickasscommerce/authentication": "*@dev"
-            },
-            "type": "kickass-bundle",
-            "autoload": {
-                "psr-4": {
-                    "KickAss\\Moltin\\": "src/"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
-            "description": "Bridge library for Moltin"
+            "description": "A small proof of concept for Moltin",
+            "time": "2017-02-21 12:10:07"
         },
         {
             "name": "league/flysystem",
@@ -2938,8 +2945,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "kickasscommerce/moltin": 20,
-        "kickasscommerce/authentication": 20
+        "kickasscommerce/framework": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

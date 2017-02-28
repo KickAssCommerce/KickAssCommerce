@@ -1,0 +1,5 @@
+product:
+  router: "KickAss\\Moltin\\Bridge\\Moltin\\Product"
+  data:
+    default: "KickAss\\Moltin\\Bridge\\Moltin\\Product"
+    price: "KickAss\\Moltin\\Bridge\\Moltin\\Product\\Price"

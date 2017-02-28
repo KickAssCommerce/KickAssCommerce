@@ -4,8 +4,15 @@
     "keywords": ["kickasscommerce", "framework"],
     "type": "project",
     "license": "MIT",
+    "repositories": [
+        {
+            "type": "path",
+            "url": "/var/www/html/kickass/framework"
+        }
+    ],
     "require": {
-        "kickasscommerce/framework": "dev-develop"
+        "kickasscommerce/framework": "dev-develop",
+        "moltin/php-sdk": "^1.3"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "^2.8",

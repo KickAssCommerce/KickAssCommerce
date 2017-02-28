@@ -5,6 +5,7 @@
     "type": "project",
     "license": "MIT",
     "require": {
+        "php": "^7.0.0",
         "kickasscommerce/framework": "dev-develop"
     },
     "require-dev": {
